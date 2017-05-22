@@ -21,3 +21,23 @@
 	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
 	-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
 }
+
+@mixin boxSize(){
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin boxShadow($h-shadow, $v-shadow, $blur){
+	-webkit-box-shadow: $h-shadow $v-shadow $blur 0 #000;
+	-moz-box-shadow: $h-shadow $v-shadow $blur 0 #000;
+	box-shadow: $h-shadow $v-shadow $blur 0 #000;
+}
+
+@mixin smoothFont(){
+	-webkit-font-smoothing: antialiased;
+       -moz-font-smoothing: antialiased;
+        -ms-font-smoothing: antialiased;
+         -o-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+}

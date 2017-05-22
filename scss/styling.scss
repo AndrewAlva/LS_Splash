@@ -3,82 +3,179 @@
 // MANDELBROT Boilerplate style
 	
 	// Variables
-	$mainHeight: 50px;
-	$mbrtLightGray: #eee;
-	$mbrtDarkGray: #303030;
+	$LSgray: #1c1c1c;
+	$LSpurple: #8367d8;
 
-	#mbrtWrap{
+	$leftSpace: 10%;
+	$fontSpace: 3px;
+	$fontH: 17px;
+
+	#tester{
+		border: 1px solid green;
+		@include boxSize();
+		position: absolute;
+		z-index: 1000000;
+		width: 201px;
+		height: 29px;
+		top: 416px;
+		right: 26%;
+	}
+
+	*{
+		font-family: 'Lato', sans-serif;
+	}
+
+	#lsWrap{
 		position: absolute;
 		width: 100%;
 		height: 100%;
+		min-height: 500px;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
 
 		.innerWrap{
 			position: absolute;
-			width: 90%; // Fall back
-			width: calc(100% - 20px);
-			height: 90%; // Fall back
-			height: calc(100% - 20px);
+			width: 100%;
+			height: 100%;
 			margin: auto;
 			top: 0; bottom: 0; left: 0; right: 0;
 			overflow: scroll;
-			background-color: $mbrtLightGray;
+			background-color: $LSgray;
 
-			header{
-				position: fixed;
-				width: 50%;
-				height: $mainHeight;
-				right: 10px;
-				border: 1px solid $mbrtDarkGray;
-				
-				li{
-					@include displayLeft();
-					width: 20%;
+			.brandWrap{
+				// border: 1px solid red;
 
+				position: absolute;
+				z-index: 100;
+				width: 480px;
+				height: 117px;
+				margin: auto;
+				top: 0; bottom: 0;
+				left: $leftSpace;
+				color: $LSpurple;
+				text-align: left;
+				text-transform: lowercase;
+
+				.logoBox{
+					position: relative;
+					width: 100%;
+					height: 64px;
 				}
-	
+
+				h1{
+					width: 100%;
+					height: 17px;
+					line-height: 1em;
+					margin: 0;
+					padding: 0;
+					margin-top: 33px;
+
+					font-size: $fontH;
+					letter-spacing: $fontSpace;
+					font-weight: 400;
+					@include smoothFont();
+				}
 			}
 
-			section{
-				position: relative;
-				width: 100%;
-				top: ($mainHeight * 2);
+			.copyWrap{
+				// border: 1px solid purple;
+
+				position: absolute;
+				overflow: hidden;
+				z-index: 10;
+				width: 782px;
+				height: 300px;
+				margin: auto;
+				top: 0; bottom: 0;
+				right: 6%;
+				color: #fff;
+				text-align: right;
+				text-transform: uppercase;
+				letter-spacing: 23px;
+				font-weight: 900;
+				font-size: 42px;
+
+				h2{
+					height: 100%;
+					margin: 0;
+					float: right;
+					line-height: 1.2em;
+					display: table;
+					// text-shadow: 5px 5px 20px #000;
+
+					span{
+						display: table-cell;
+						vertical-align: middle;
+					}
+				}
+			}
+
+			.canvasWrap{
+				// border: 1px solid aqua;
+				position: absolute;
+				z-index: 0;
+				width: 728px;
+				height: 100%;
+				overflow: hidden;
+				@include boxSize();
+				right: 10%;
+				@include boxShadow(10px, 5px, 60px);
+				@include transitions(all, 0.4s, ease-out);
+
+				&:hover{
+					@include boxShadow(5px, 2px, 20px);
+				}
 			}
 
 			footer{
-				position: fixed;
-				width: 200px;
-				height: $mainHeight;
-				left: 10px;
-				bottom: 10px;
-				border: 1px solid $mbrtDarkGray;
+				// border: 1px solid $LSpurple;
 
-				li{
-					@include displayLeft();
-					width: 25%;
-					text-transform: uppercase;
+				position: absolute;
+				z-index: 100;
+				width: 280px;
+				height: 69px;
+				left: $leftSpace;
+				text-align: left;
+				bottom: 100px;
+				color: $LSpurple;
+				font-weight: 400;
+				@include smoothFont();
+				font-size: $fontH;
+				letter-spacing: $fontSpace;
+
+				.findMe{
+					margin: 0;
+					padding: 0;
+					width: 100%;
+					height: 26px;
+					margin-bottom: 20px;
+
+					li{
+						@include displayLeft();
+						text-transform: uppercase;
+						margin: 0;
+						padding: 0;
+					}
+
+					li:first-child{
+						left: -7px;
+						margin-right: 11px;
+					}
 				}
-			}
-
-			.mbrtBttns{
-				line-height: $mainHeight;
 			}
 
 			a{
 				display: block;
-				text-align: center;
 				text-decoration: none;
-				color: $mbrtLightGray;
 				font-weight: lighter;
-				background-color: $mbrtDarkGray;
+				color: $LSpurple;
 
 				@include transitions(all, 0.3s, ease-in-out);
 
 				&:hover{
-					color: $mbrtDarkGray;
-					background-color: $mbrtLightGray;
+					color: $LSpurple;
+					background-color: $LSgray;
 					@include opacity(0.5);
 				}
 			}

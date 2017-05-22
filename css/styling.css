@@ -1,78 +1,166 @@
-#mbrtWrap {
+#tester {
+  border: 1px solid green;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1000000;
+  width: 201px;
+  height: 29px;
+  top: 416px;
+  right: 26%; }
+
+* {
+  font-family: 'Lato', sans-serif; }
+
+#lsWrap {
   position: absolute;
   width: 100%;
   height: 100%;
+  min-height: 500px;
   margin: 0;
   padding: 0;
   overflow: hidden; }
-  #mbrtWrap .innerWrap {
+  #lsWrap .innerWrap {
     position: absolute;
-    width: 90%;
-    width: calc(100% - 20px);
-    height: 90%;
-    height: calc(100% - 20px);
+    width: 100%;
+    height: 100%;
     margin: auto;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     overflow: scroll;
-    background-color: #eee; }
-    #mbrtWrap .innerWrap header {
-      position: fixed;
-      width: 50%;
-      height: 50px;
-      right: 10px;
-      border: 1px solid #303030; }
-      #mbrtWrap .innerWrap header li {
+    background-color: #1c1c1c; }
+    #lsWrap .innerWrap .brandWrap {
+      position: absolute;
+      z-index: 100;
+      width: 480px;
+      height: 117px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 10%;
+      color: #8367d8;
+      text-align: left;
+      text-transform: lowercase; }
+      #lsWrap .innerWrap .brandWrap .logoBox {
         position: relative;
-        float: left;
-        display: inline-block;
-        vertical-align: top;
-        zoom: 1;
-        /* Fix for IE7 */
-        *display: inline;
-        /* Fix for IE7 */
-        width: 20%; }
-    #mbrtWrap .innerWrap section {
-      position: relative;
-      width: 100%;
-      top: 100px; }
-    #mbrtWrap .innerWrap footer {
-      position: fixed;
-      width: 200px;
-      height: 50px;
-      left: 10px;
-      bottom: 10px;
-      border: 1px solid #303030; }
-      #mbrtWrap .innerWrap footer li {
-        position: relative;
-        float: left;
-        display: inline-block;
-        vertical-align: top;
-        zoom: 1;
-        /* Fix for IE7 */
-        *display: inline;
-        /* Fix for IE7 */
-        width: 25%;
-        text-transform: uppercase; }
-    #mbrtWrap .innerWrap .mbrtBttns {
-      line-height: 50px; }
-    #mbrtWrap .innerWrap a {
+        width: 100%;
+        height: 64px; }
+      #lsWrap .innerWrap .brandWrap h1 {
+        width: 100%;
+        height: 17px;
+        line-height: 1em;
+        margin: 0;
+        padding: 0;
+        margin-top: 33px;
+        font-size: 17px;
+        letter-spacing: 3px;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -ms-font-smoothing: antialiased;
+        -o-font-smoothing: antialiased;
+        font-smoothing: antialiased; }
+    #lsWrap .innerWrap .copyWrap {
+      position: absolute;
+      overflow: hidden;
+      z-index: 10;
+      width: 782px;
+      height: 300px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 6%;
+      color: #fff;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 23px;
+      font-weight: 900;
+      font-size: 42px; }
+      #lsWrap .innerWrap .copyWrap h2 {
+        height: 100%;
+        margin: 0;
+        float: right;
+        line-height: 1.2em;
+        display: table; }
+        #lsWrap .innerWrap .copyWrap h2 span {
+          display: table-cell;
+          vertical-align: middle; }
+    #lsWrap .innerWrap .canvasWrap {
+      position: absolute;
+      z-index: 0;
+      width: 728px;
+      height: 100%;
+      overflow: hidden;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      right: 10%;
+      -webkit-box-shadow: 10px 5px 60px 0 #000;
+      -moz-box-shadow: 10px 5px 60px 0 #000;
+      box-shadow: 10px 5px 60px 0 #000;
+      -webkit-transition: all 0.4s ease-out;
+      -moz-transition: all 0.4s ease-out;
+      -ms-transition: all 0.4s ease-out;
+      -o-transition: all 0.4s ease-out;
+      transition: all 0.4s ease-out; }
+      #lsWrap .innerWrap .canvasWrap:hover {
+        -webkit-box-shadow: 5px 2px 20px 0 #000;
+        -moz-box-shadow: 5px 2px 20px 0 #000;
+        box-shadow: 5px 2px 20px 0 #000; }
+    #lsWrap .innerWrap footer {
+      position: absolute;
+      z-index: 100;
+      width: 280px;
+      height: 69px;
+      left: 10%;
+      text-align: left;
+      bottom: 100px;
+      color: #8367d8;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      -ms-font-smoothing: antialiased;
+      -o-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      font-size: 17px;
+      letter-spacing: 3px; }
+      #lsWrap .innerWrap footer .findMe {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 26px;
+        margin-bottom: 20px; }
+        #lsWrap .innerWrap footer .findMe li {
+          position: relative;
+          float: left;
+          display: inline-block;
+          vertical-align: top;
+          zoom: 1;
+          /* Fix for IE7 */
+          *display: inline;
+          /* Fix for IE7 */
+          text-transform: uppercase;
+          margin: 0;
+          padding: 0; }
+        #lsWrap .innerWrap footer .findMe li:first-child {
+          left: -7px;
+          margin-right: 11px; }
+    #lsWrap .innerWrap a {
       display: block;
-      text-align: center;
       text-decoration: none;
-      color: #eee;
       font-weight: lighter;
-      background-color: #303030;
+      color: #8367d8;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-      #mbrtWrap .innerWrap a:hover {
-        color: #303030;
-        background-color: #eee;
+      #lsWrap .innerWrap a:hover {
+        color: #8367d8;
+        background-color: #1c1c1c;
         opacity: 0.5;
         filter: alpha(opacity=50);
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));

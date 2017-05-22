@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>LifeStrategics | Coming Soon</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,6 +30,7 @@
         <!-- Place favicon.png in the root directory -->
         <link rel="icon" type="image/png" href="favicon.png">
 
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/styling.css">
@@ -43,35 +44,61 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div id="mbrtWrap">
+
+        <!-- <div id="tester"></div> -->
+
+        <div id="lsWrap">
             <div class="innerWrap">
-                <header>
-                    <li class="mbrtBttns"><a href="#" alt="Home" title="Home">Home</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="Work" title="Work">Work</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="Services" title="Services">Services</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="About" title="About">About</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="Contact" title="Contact">Contact</a></li>
-                </header>
 
+                <div class="brandWrap">
+                    <div class="logoBox">
+                        <img src="img/lifestrategics_logo.png" alt="LifeStrategics">
+                    </div>
 
-                <section>
-                    <h1>Hello friend.</h1>
-                    <h2>This is Mandelbrot Boilerplate</h2>
+                    <h1>
+                        Understand&nbsp;&nbsp;&nbsp;&nbsp;
+                        ·&nbsp;&nbsp;&nbsp;&nbsp;
+                        Decide&nbsp;&nbsp;&nbsp;&nbsp;
+                        ·&nbsp;&nbsp;&nbsp;&nbsp;
+                        Take Action
+                    </h1>
+                </div>
 
-                    <p>Esto es un template para realizar desarrollos sencillos basado en el boilerplate de HTML5 y estructurado como una aplicación para el uso de preprocesadores como SASS (dividido en app y dist). </p>
+                <div class="copyWrap">
+                    <h2 class="twoLines">
+                        <span>
+                            Site Under<br>
+                            Construction
+                        </span>
+                    </h2>
+                </div>
 
-                    <p>Si quieres colaborar o sólo necesitas más información envíame un mail a <a href="mailto:andrew@mandelbrot.mx" alt="Andrew's mail" title="Andrew's mail">andrew@mandelbrot.mx</a></p>
-                </section>
+                <div class="canvasWrap">
+                    <canvas id="dotCanvas"></canvas>
+                </div>
+                
 
 
                 <footer>
-                    <li class="mbrtBttns"><a href="#" alt="Facebook" title="Facebook">fb</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="Instagram" title="Instagram">ig</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="Behance" title="Behance">be</a></li>
-                    <li class="mbrtBttns"><a href="#" alt="Snapchat" title="Snapchat">sc</a></li>
+                    <ul class="findMe">
+                        <li>
+                            <a href="https://www.facebook.com/LifeStrategics/" target="_blank" alt="Facebook" title="Facebook">
+                                <img src="img/fb_icon.png" alt="Fb">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/lifestrategics/" target="_blank" alt="Twitter" title="Twitter">
+                                <img src="img/tw_icon.png" alt="Tw">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <a href="mailto:monica@lifestrategics.com" class="mailMe">monica@lifestrategics.com</a>
                 </footer>
             </div>
         </div>
+
+        <script src="js/dots_canvas.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
