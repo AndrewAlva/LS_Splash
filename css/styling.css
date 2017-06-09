@@ -5,10 +5,10 @@
   box-sizing: border-box;
   position: absolute;
   z-index: 1000000;
-  width: 201px;
-  height: 29px;
-  top: 416px;
-  right: 26%; }
+  width: 468px;
+  height: 80px;
+  top: 321px;
+  right: 4%; }
 
 * {
   font-family: 'Lato', sans-serif; }
@@ -35,19 +35,20 @@
     #lsWrap .innerWrap .brandWrap {
       position: absolute;
       z-index: 100;
-      width: 480px;
+      width: 452px;
       height: 117px;
       margin: auto;
       top: 0;
       bottom: 0;
       left: 10%;
-      color: #8367d8;
       text-align: left;
       text-transform: lowercase; }
       #lsWrap .innerWrap .brandWrap .logoBox {
         position: relative;
         width: 100%;
         height: 64px; }
+        #lsWrap .innerWrap .brandWrap .logoBox img {
+          width: 100%; }
       #lsWrap .innerWrap .brandWrap h1 {
         width: 100%;
         height: 17px;
@@ -55,6 +56,7 @@
         margin: 0;
         padding: 0;
         margin-top: 33px;
+        color: #fff;
         font-size: 17px;
         letter-spacing: 3px;
         font-weight: 400;
@@ -63,6 +65,12 @@
         -ms-font-smoothing: antialiased;
         -o-font-smoothing: antialiased;
         font-smoothing: antialiased; }
+        #lsWrap .innerWrap .brandWrap h1 .blueLS {
+          color: #2ec5f1; }
+        #lsWrap .innerWrap .brandWrap h1 .yellowLS {
+          color: #f7ec27; }
+        #lsWrap .innerWrap .brandWrap h1 .redLS {
+          color: #ef3d3d; }
     #lsWrap .innerWrap .copyWrap {
       position: absolute;
       overflow: hidden;
@@ -118,7 +126,7 @@
       left: 10%;
       text-align: left;
       bottom: 100px;
-      color: #8367d8;
+      color: #2ec5f1;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-font-smoothing: antialiased;
@@ -145,6 +153,22 @@
           text-transform: uppercase;
           margin: 0;
           padding: 0; }
+          #lsWrap .innerWrap footer .findMe li a .frontIcon {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; }
+            #lsWrap .innerWrap footer .findMe li a .frontIcon:hover {
+              opacity: 0;
+              filter: alpha(opacity=0);
+              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+              -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
+          #lsWrap .innerWrap footer .findMe li a .backIcon {
+            position: absolute;
+            top: 1px;
+            left: 0;
+            z-index: -1; }
         #lsWrap .innerWrap footer .findMe li:first-child {
           left: -7px;
           margin-right: 11px; }
@@ -152,18 +176,44 @@
       display: block;
       text-decoration: none;
       font-weight: lighter;
-      color: #8367d8;
+      color: #2ec5f1;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
       #lsWrap .innerWrap a:hover {
-        color: #8367d8;
+        color: #f7ec27;
         background-color: #1c1c1c;
-        opacity: 0.5;
-        filter: alpha(opacity=50);
+        opacity: 0.9;
+        filter: alpha(opacity=90);
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
         -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
+
+@media only screen and (max-width: 1520px) {
+  #lsWrap .innerWrap .brandWrap {
+    width: 385px;
+    height: 88px;
+    left: 6%; }
+    #lsWrap .innerWrap .brandWrap .logoBox {
+      height: 54px; }
+    #lsWrap .innerWrap .brandWrap h1 {
+      margin-top: 20px;
+      font-size: 15px;
+      letter-spacing: 2.5px; }
+  #lsWrap .innerWrap .copyWrap {
+    right: 2.5%;
+    width: 500px;
+    height: 200px;
+    font-size: 25px;
+    letter-spacing: 16px; }
+  #lsWrap .innerWrap .canvasWrap {
+    width: 493px;
+    right: 6%; }
+  #lsWrap .innerWrap footer {
+    left: 6%;
+    bottom: 70px;
+    font-size: 15px;
+    letter-spacing: 2.5px; } }
 
 /*# sourceMappingURL=styling.css.map */

@@ -1,0 +1,76 @@
+// Large devices styling
+@media only screen and (min-width: 1550px){
+
+}
+
+// Laptop
+@media only screen and (max-width: 1520px){
+	#lsWrap{
+		.innerWrap{
+			.brandWrap{
+				width: 385px;
+				height: 88px;
+				left: 6%;
+
+				.logoBox{
+					height: 54px;
+				}
+
+				h1{
+					margin-top: 20px;
+					font-size: 15px;
+					letter-spacing: 2.5px;
+				}
+			}
+
+			.copyWrap{
+				right: 2.5%;
+				width: 500px;
+				height: 200px;
+				font-size: 25px;
+				letter-spacing: 16px;
+
+				h2{
+					
+				}
+			}
+
+			.canvasWrap{
+				width: 493px;
+				right: 6%;
+			}
+
+			footer{
+				left: 6%;
+				bottom: 70px;
+				font-size: 15px;
+				letter-spacing: 2.5px;
+			}
+		}
+	}
+}
+
+
+
+// Tablet Styling
+@media only screen and (max-width: 1024px){
+	
+}
+
+
+// Tablet Landscape
+@media only screen and (max-width: 1024px) {
+	
+}
+
+
+// Tablet Portrait
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+	
+}
+
+
+// Phones
+@media only screen and (max-width: 767px){
+	
+}
