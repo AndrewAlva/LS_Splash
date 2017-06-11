@@ -19,7 +19,7 @@
 			}
 
 			.copyWrap{
-				right: 1.5%;
+				right: 4%;
 				width: 500px;
 				height: 200px;
 				font-size: 25px;
@@ -28,7 +28,6 @@
 
 			.canvasWrap{
 				width: 493px;
-				right: 6%;
 			}
 
 			footer{
@@ -43,25 +42,189 @@
 
 
 
-// Tablet Styling
+// Tablet Styling Sizes
 @media only screen and (max-width: 1024px){
-	
+	#lsWrap{
+		.innerWrap{
+			.brandWrap{
+				width: 314px;
+				height: 75px;
+				left: 40px;
+
+				.logoBox{
+					height: 44px;
+				}
+
+				h1{
+					height: 13px;
+					margin-top: 18px;
+					font-size: 13px;
+					letter-spacing: 1.8px;	
+				}
+			}
+
+			.copyWrap{
+				right: 40px ;
+				font-size: 22px;
+				letter-spacing: 13px;
+			}
+
+			footer{
+				height: 50px;
+				left: 40px;
+				font-size: 13px;
+				letter-spacing: 1.8px;
+				bottom: 35px;
+
+				.findMe{
+					height: 17px;
+					margin-bottom: 15px;
+
+					li{
+						width: 17px;
+
+						a{
+							width: 100%;
+
+							img{
+								width: 100%;
+							}
+
+							.backIcon{
+								display: none;
+							}
+						}
+					}
+
+					li:first-child{
+						left: -2px;
+						margin-right: 8px;
+					}
+				}
+			}
+		}
+	}
 }
 
 
-// Tablet Landscape
-@media only screen and (max-width: 1024px) {
-	
+// Tablet Landscape Layout
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+	#lsWrap{
+		.innerWrap{
+			.canvasWrap{
+				width: 395px;
+			}
+		}
+	}
 }
 
 
-// Tablet Portrait
+// Tablet Portrait Layout
 @media only screen and (max-width: 1024px) and (orientation: portrait){
-	
+	#lsWrap{
+		.innerWrap{
+			.brandWrap{
+				top: 21.6%;
+				bottom: auto;
+			}
+
+			.copyWrap{
+				top: 70px;
+				left: 40px;
+				right: auto;
+				text-align: left;
+
+				h2{
+					float: left;
+				}
+			}
+
+			.canvasWrap{
+				width: 293px;
+			}
+		}
+	}
 }
 
 
 // Phones
 @media only screen and (max-width: 767px){
-	
+	#lsWrap{
+		min-height: 450px;
+
+		.innerWrap{
+			.brandWrap{
+				top: 107px;
+				bottom: auto;
+				left: 20px;
+				width: 190px;
+				height: 50px;
+
+				.logoBox{
+					height: 26px;
+				}
+
+				h1{
+					height: 10px;
+					margin-top: 12px;
+					font-size: 8.5px;
+					letter-spacing: 0.8px;
+				}
+			}
+
+			.copyWrap{
+				height: 120px;
+				top: 35px;
+				left: 20px;
+				right: auto;
+				text-align: left;
+				font-size: 12px;
+				letter-spacing: 9px;
+				@include smoothFont();
+
+				h2{
+					float: left;
+				}
+			}
+
+			.canvasWrap{
+				width: 43%;
+				right: 40px;
+			}
+
+			footer{
+				width: 125px;
+				height: 45px;
+				left: 20px;
+				bottom: 45px;
+				font-size: 8.5px;
+				letter-spacing: 0.8px;
+
+				.findMe{
+					height: 14px;
+					margin-bottom: 20px;
+					
+					li{
+						width: 14px;
+					}
+
+					li:first-child{
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
