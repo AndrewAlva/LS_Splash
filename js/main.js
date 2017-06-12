@@ -49,9 +49,4 @@ jQuery(document).ready(function($) {
 
 		}, lsInterval);
 
-
-	// Detect if user used mobile to visit the site to disable html5 canvas and prevent bugs and delays
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$('#dotCanvas').remove();
-	}
 });
