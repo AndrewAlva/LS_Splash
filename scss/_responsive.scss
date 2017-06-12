@@ -174,8 +174,8 @@
 				h1{
 					height: 10px;
 					margin-top: 12px;
-					font-size: 8.5px;
-					letter-spacing: 0.8px;
+					font-size: 9px;
+					letter-spacing: 0.4px;
 				}
 			}
 
@@ -197,6 +197,12 @@
 			.canvasWrap{
 				width: 43%;
 				right: 40px;
+				background-size: contain;
+				background-repeat: repeat;
+
+				#dotCanvas{
+					display: none;
+				}
 			}
 
 			footer{
@@ -204,8 +210,8 @@
 				height: 45px;
 				left: 20px;
 				bottom: 45px;
-				font-size: 8.5px;
-				letter-spacing: 0.8px;
+				font-size: 9px;
+				letter-spacing: 0.4px;
 
 				.findMe{
 					height: 14px;

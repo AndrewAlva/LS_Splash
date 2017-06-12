@@ -139,6 +139,7 @@
 				width: 728px;
 				height: 100%;
 				overflow: hidden;
+				background: url('../img/dot_bg.png');
 				@include boxSize();
 				right: 10%;
 				@include boxShadow(10px, 5px, 60px);
