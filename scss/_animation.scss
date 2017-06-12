@@ -1,0 +1,39 @@
+// Animation Classes
+.fadeIn{
+	@include opacity(0);
+	-webkit-transform: translate(0, 20px);
+	   -moz-transform: translate(0, 20px);
+	    -ms-transform: translate(0, 20px);
+	     -o-transform: translate(0, 20px);
+	        transform: translate(0, 20px);
+}
+
+.switchQuote{
+	-webkit-transform: translate(100%, 0);
+	   -moz-transform: translate(100%, 0);
+	    -ms-transform: translate(100%, 0);
+	     -o-transform: translate(100%, 0);
+	        transform: translate(100%, 0);
+}
+
+
+// Responsive style for small devices
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+	.switchQuote{
+		-webkit-transform: translate(-100%, 0);
+		   -moz-transform: translate(-100%, 0);
+		    -ms-transform: translate(-100%, 0);
+		     -o-transform: translate(-100%, 0);
+		        transform: translate(-100%, 0);
+	}
+}
+
+@media only screen and (max-width: 767px){
+	.switchQuote{
+		-webkit-transform: translate(-100%, 0);
+		   -moz-transform: translate(-100%, 0);
+		    -ms-transform: translate(-100%, 0);
+		     -o-transform: translate(-100%, 0);
+		        transform: translate(-100%, 0);
+	}
+}
