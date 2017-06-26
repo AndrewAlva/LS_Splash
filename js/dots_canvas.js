@@ -1,118 +1,147 @@
-// Detect if user used mobile to visit the site to disable html5 canvas and prevent bugs and delays
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    $('#dotCanvas').remove();
-    
-} else{
-  function rand(min,max)
-  {
-      return Math.floor(Math.random()*(max-min+1)+min);
-  }
-
-  var canvas,ctx,w,h;
-
-  canvas = document.getElementById("dotCanvas");
-
-  w = window.innerWidth;
-  h = window.innerHeight;
-
-  canvas.width = w;
-  canvas.height = h;
-
-  ctx = canvas.getContext('2d');
-
-
-  var particleNum,minDist;
-  particleNum = 110;
-  minDist = w/2;
-
-  var particles = [];
-
-  function particle(){
-    this.x = Math.random()*w,
-    this.y = Math.random()*h,
-    this.vx = rand(-1,1),
-    this.vy = Math.random(),
-    this.radius = 2,
-    this.draw = function() {
-    ctx.fillStyle = "white";
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    ctx.fill();
-    }
-  }
-  function paintCanvas(){
-    ctx.fillStyle = 'rgba(28,28,28,1)';
-    ctx.fillRect(0,0,w,h);
-  }
-
-  for (i=0; i<particleNum;i++){
-    particles.push(new particle());
-  }
-
-  // Initial mouse position
-  var mouse = {x: -100, y: -100};
-
-  // When mouse is moving, update cursor position
-  document.addEventListener('mousemove', function(e){ 
-      mouse.x = e.clientX || e.pageX; 
-      mouse.y = e.clientY || e.pageY 
-  }, false);
-
-  function draw(){
-    paintCanvas();
-    for(i=0;i<particles.length;i++){
-      p=particles[i];
-      p.draw();
-      update();
-      for(var j=i+1;j<particles.length;j++){
-        p2= particles[j];
-        distance(mouse,p2);
-      }
-    }
-  }
-  function update(){
-    p = particles[i];
-    p.x += p.vx;
-    p.y += p.vy;
-    
-    if(p.x > w){
-      p.x = 0;
-    }
-    else if(p.x<0){
-      p.x = w;
-    }
-    
-    if(p.y > h){
-      p.y = 0;
-    }
-    else if(p.y<0){
-      p.y = h;
-    }
-    
-  }
-  function distance(p1,p2){
-    
-    var dist;
-    var dx = p1.x - p2.x;
-    var dy = p1.y - p2.y;
-    
-    dist = Math.sqrt(dx*dx + dy*dy);
-    
-    if (dist <= minDist){
-      ctx.beginPath();
-      ctx.strokeStyle = "rgba(255,255,255,"+ (0.2-dist/minDist) +")";
-      p1.vx=0;
-      ctx.moveTo(p1.x, p1.y);
-      ctx.lineTo(p2.x, p2.y);
-      ctx.lineWidth=0.3;
-      ctx.stroke();
-      ctx.closePath();
-    }
-  }
-  setInterval(function(){
-    draw(); 
-  },30);
-
-
-  draw();
+Math.distance = function(a, b){
+  return Math.sqrt( Math.pow((a.x-b.x), 2) + Math.pow((a.y-b.y), 2) );
 }
+// @see https://gist.github.com/mrdoob/838785
+if (!window.requestAnimationFrame) {
+  window.requestAnimationFrame = (function() {
+    return window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
+      window.setTimeout( callback, 1000 / 60 );
+    };
+  })();
+}
+// vars definitions
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+var PI2 = Math.PI*2;
+var container, canvas, context;
+//
+var totalDots = isMobile ? 50 : 150;
+var dots = [];
+var min_distance = 80;
+var friction = 0.15; //
+// size
+var width = window.innerWidth,
+  height = window.innerHeight;
+//mouse
+var mouse = {
+  x: 0,
+  y: 0
+}
+var cursor = {
+  x: width / 2,
+  y: height / 2
+}
+function init(){
+  container = document.getElementById("canvasWrap");
+  canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  context = canvas.getContext("2d");
+  setDots();
+  addEvents();
+  //
+  container.appendChild(canvas);
+}
+
+function addEvents() {
+  /* throttle for PERFORMANCE */
+  window.addEventListener("resize", _.throttle(onWindowResize, 250), false);
+  if(isMobile) window.addEventListener("touchstart", _.throttle(onTouchStart, 250), false);
+  else window.addEventListener("mousemove", _.throttle(onMouseMove, 150), false);
+}
+
+function onMouseMove(event){
+    var rect = canvas.getBoundingClientRect();
+  mouse = {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top
+    }
+}
+
+function onTouchStart(event) {
+  var rect = canvas.getBoundingClientRect();
+  var touch = event.touches[0];
+  mouse = {
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
+    }
+}
+
+function setDots(){
+  for (var i = 0; i < totalDots; i++) {
+    var _dot = new Dot();
+    dots.push(_dot);
+  }
+}
+
+function onWindowResize(){
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+}
+
+var Dot = function(args){
+  if (args===undefined) var args = {};
+  this.position = {
+    x: args.x || Math.random() * canvas.width,
+    y: args.y || Math.random() * canvas.height
+  };
+  this.radius = args.radius || Math.ceil(Math.random()*3);
+  this.velocity = {
+    x: Math.random() * 2 - 1,
+    y: Math.random() * 2 - 1,
+  }
+  this.draw = function(){
+    this.updateCoords();
+    context.beginPath();
+    context.arc(this.position.x,this.position.y,this.radius,0,PI2);
+    context.fill();
+  }
+  this.updateCoords = function(){
+    this.position.x += this.velocity.x;
+    this.position.y += this.velocity.y;
+    if(this.position.x < 0) this.position.x = canvas.width;
+    if(this.position.y < 0) this.position.y = canvas.height;
+    if(this.position.x > canvas.width) this.position.x = 0;
+    if(this.position.y > canvas.height) this.position.y = 0;
+  }
+  return this;
+}
+
+function updateCursor() {
+  cursor.x += (mouse.x - cursor.x) * friction;
+    cursor.y += (mouse.y - cursor.y) * friction;
+    context.beginPath();
+  context.fillStyle="white";
+  context.arc(cursor.x, cursor.y, 2, 0, PI2);
+  context.fill();
+}
+
+function animate(){
+  requestAnimationFrame(animate);
+  render();
+}
+
+function render(){
+  context.clearRect(0,0,canvas.width,canvas.height);
+  updateCursor();
+  for (var i = 0; i < dots.length; i++) {
+    var _dot_a = dots[i];
+    _dot_a.draw();
+    var _distance = Math.distance(_dot_a.position, cursor);
+    if(_distance < min_distance){
+      context.moveTo(_dot_a.position.x, _dot_a.position.y);
+      context.lineTo(cursor.x, cursor.y);
+      context.strokeStyle="white";
+      context.lineWidth = 1 - (_distance/min_distance);
+      context.stroke();
+    }
+  }
+}
+
+init();
+animate();

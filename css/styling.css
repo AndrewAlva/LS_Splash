@@ -110,13 +110,12 @@
           -ms-transition: all 0.8s ease-in-out;
           -o-transition: all 0.8s ease-in-out;
           transition: all 0.8s ease-in-out; }
-    #lsWrap .innerWrap .canvasWrap {
+    #lsWrap .innerWrap #canvasWrap {
       position: absolute;
       z-index: 0;
       width: 728px;
       height: 100%;
       overflow: hidden;
-      background: url("../img/dot_bg.png");
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -129,7 +128,7 @@
       -ms-transition: all 0.4s ease-out;
       -o-transition: all 0.4s ease-out;
       transition: all 0.4s ease-out; }
-      #lsWrap .innerWrap .canvasWrap:hover {
+      #lsWrap .innerWrap #canvasWrap:hover {
         -webkit-box-shadow: 5px 2px 20px 0 #000;
         -moz-box-shadow: 5px 2px 20px 0 #000;
         box-shadow: 5px 2px 20px 0 #000; }
@@ -233,7 +232,7 @@
     height: 200px;
     font-size: 25px;
     letter-spacing: 16px; }
-  #lsWrap .innerWrap .canvasWrap {
+  #lsWrap .innerWrap #canvasWrap {
     width: 493px; }
   #lsWrap .innerWrap footer {
     width: 245px;
@@ -284,7 +283,7 @@
         left: -2px;
         margin-right: 8px; } }
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
-  #lsWrap .innerWrap .canvasWrap {
+  #lsWrap .innerWrap #canvasWrap {
     width: 395px; } }
 @media only screen and (max-width: 1024px) and (orientation: portrait) {
   #lsWrap .innerWrap .brandWrap {
@@ -297,7 +296,7 @@
     text-align: left; }
     #lsWrap .innerWrap .copyWrap h2 {
       float: left; }
-  #lsWrap .innerWrap .canvasWrap {
+  #lsWrap .innerWrap #canvasWrap {
     width: 293px; } }
 @media only screen and (max-width: 767px) {
   #lsWrap {
@@ -330,13 +329,11 @@
       font-smoothing: antialiased; }
       #lsWrap .innerWrap .copyWrap h2 {
         float: left; }
-    #lsWrap .innerWrap .canvasWrap {
+    #lsWrap .innerWrap #canvasWrap {
       width: 43%;
       right: 40px;
       background-size: contain;
       background-repeat: repeat; }
-      #lsWrap .innerWrap .canvasWrap #dotCanvas {
-        display: none; }
     #lsWrap .innerWrap footer {
       width: 125px;
       height: 45px;
